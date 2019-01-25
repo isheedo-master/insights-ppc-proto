@@ -29,7 +29,9 @@ export default({metric, value}) => {
           {trendSettings[getTrend(value, metric)].icon}
         </strong>
       </p>
-      {metricSettings[metric].label}<br />
+      <strong>
+        {metricSettings[metric].label}<br />
+      </strong>
       <small>
         Percentage of campaigns that are X compared to total campaigns
       </small>
