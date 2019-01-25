@@ -4,12 +4,75 @@
   text-align: center;
 }
 
+.text-left {
+  text-align: left;
+}
+
+.ant-layout-header {
+  padding: 1rem 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  background-color: white;
+}
+
+.ant-list {
+  width: 100%;
+}
+
+.ant-list-item-content-single {
+  align-items: center;
+}
+
+.ant-list-item {
+  background: white;
+}
+
+.ant-list-item strong {
+  color: rgb(91,195,76);
+  font-size: 20px;
+  margin-right: 10px;
+  margin-left: 10px;
+}
+
+.ant-list-item i {
+  font-size: 20px;
+}
+
+.ant-layout-content {
+  padding: 2rem;
+}
+
+.ant-card {
+  min-height: 150px;
+}
+
+
+[class*=ant-col] {
+  margin-bottom: 1rem;
+}
+
+.ant-card strong {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.valueNum {
+  font-size: 2rem;
+  margin-right: 0.5rem;
+}
+
+.ant-layout-header img{
+  height: auto;
+  max-height: 90%;
+}
+
 .App-logo {
   height: 40vmin;
 }
 
 .App-header {
-  background-color: #282c34;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
