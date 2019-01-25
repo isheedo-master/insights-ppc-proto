@@ -24,12 +24,13 @@ export default({metric, value}) => {
           }}
         >
           <span className="valueNum">
-            {value}
+            {value} %
           </span>
           {trendSettings[getTrend(value, metric)].icon}
         </strong>
       </p>
-      {metricSettings[metric].label}
+      {metricSettings[metric].label}<br />
+      <small>Efficiently predominate technically </small>
     </Card>
   );
 };

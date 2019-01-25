@@ -63,22 +63,22 @@ export const dataSample = [
       refreshFrequency:"DAILY"
     }
   },
-  {
-    metric:"mostProfitableDayForLastYear",
-    value:"20180921",
-    valueType:"DAY",
-    metadata:{
-      refreshFrequency:"WEEKLY"
-    }
-  },
-  {
-    metric:"mostProfitableMonthForLastThreeYears",
-    value:"20170101",
-    valueType:"MONTH",
-    metadata:{
-      refreshFrequency:"WEEKLY"
-    }
-  },
+  // {
+  //   metric:"mostProfitableDayForLastYear",
+  //   value:"20180921",
+  //   valueType:"DAY",
+  //   metadata:{
+  //     refreshFrequency:"WEEKLY"
+  //   }
+  // },
+  // {
+  //   metric:"mostProfitableMonthForLastThreeYears",
+  //   value:"20170101",
+  //   valueType:"MONTH",
+  //   metadata:{
+  //     refreshFrequency:"WEEKLY"
+  //   }
+  // },
   {
     metric:"mostProfitableMonthForLastYear",
     value:"20180401",
@@ -95,13 +95,20 @@ export const dataSample = [
       refreshFrequency:"WEEKLY"
     }
   },
-  {metric:"mostProfitableWeekForLastYear",
-    value:"20181112",
-    valueType:"WEEK_M",
+  // {metric:"mostProfitableWeekForLastYear",
+  //   value:"20181112",
+  //   valueType:"WEEK_M",
+  //   metadata:{
+  //     refreshFrequency:"WEEKLY"
+  //   }
+  // },
+  {metric:"percentOfAutomatedAdSpend",
+    value: 45,
+    valueType:"PC",
     metadata:{
-      refreshFrequency:"WEEKLY"
+      refreshFrequency:"DAILY"
     }
-  }
+  },
 ]
 
 export const metricSettings = {
@@ -132,8 +139,8 @@ export const metricSettings = {
   },
   productsWithOrders: {
     label: "Products with orders",
-    green: 90,
-    red: 70
+    green: 75,
+    red: 30
   },
   profitableProducts: {
     label: "Profitable products",
@@ -141,21 +148,26 @@ export const metricSettings = {
     red: 50
   },
   mostProfitableDayForLastWeek: {
-    label: "Most profitable day of the last week",
+    label: "your most profitable day of the last week",
   },
   mostProfitableDayForLastYear: {
-    label: "Most profitable day of the last year",
+    label: "your most profitable day of the last year",
   },
   mostProfitableMonthForLastThreeYears: {
-    label: "Most profitable month for the last 3 years",
+    label: "your most profitable month for the last 3 years",
   },
   mostProfitableMonthForLastYear: {
-    label: "Most profitable month for the last year",
+    label: "your most profitable month for the last year",
   },
   mostProfitableWeekForLastMonth: {
-    label: "Most profitable week for last month",
+    label: "your most profitable week for last month",
   },
   mostProfitableWeekForLastYear: {
-    label: "Most profitable week for last year",
+    label: "your most profitable week for last year",
+  },
+  percentOfAutomatedAdSpend: {
+    label: "% of automated ad spend",
+    green: 40,
+    red: 10
   },
 }

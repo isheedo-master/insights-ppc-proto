@@ -16,14 +16,15 @@ const {
 } = Layout;
 
 const formats = {
-  DAY: "MMM Do YYYY",
-  MONTH: "MMM YYYY",
-  WEEK_M: "MMM Do YYYY",
+  DAY: "dddd",
+  MONTH: "MMMM",
+  WEEK_M: "w",
 }
 
 class App extends Component {
   render() {
-    const percentageMetrics = dataSample.filter(metric => metric.valueType === 'PC');
+    const percentageMetrics = dataSample.filter(metric => metric.valueType === 'PC')
+      .sort(metric => metric.metric.includes('campaigns') ? -1 : 1);
     const seasonalMetrics = dataSample.filter(metric => metric.valueType !== 'PC');
 
     return (
@@ -41,14 +42,15 @@ class App extends Component {
               <Icon type="bulb" /> INSIGHTS <small>for last 30 days</small>
             </Divider>
             <Row gutter={16} type="flex">
-              {percentageMetrics.map( metric =>
-                <Col key={metric.metric} sm={12} md={6  }>
-                  <MetricCard {...metric} />
-                </Col>
+              {percentageMetrics
+                .map( metric =>
+                  <Col key={metric.metric} sm={12} md={6  }>
+                    <MetricCard {...metric} />
+                  </Col>
               )}
             </Row>
             <Divider orientation="left">
-              <Icon type="calendar" /> SEASONAL
+              <Icon type="calendar" /> SEASONALITY
             </Divider>
             <Row gutter={16} type="flex">
             <List
@@ -59,11 +61,15 @@ class App extends Component {
                 metric => (
                   <List.Item>
                     <Icon type="info-circle" />
-                    <strong>
-                      {moment(metric.value).format(formats[metric.valueType])}
-                    </strong>
-                    <span>
-                    {metricSettings[metric.metric].label}
+                    <span className='text-left'>
+                      <strong>
+                        {
+                          `${metric.valueType === 'WEEK_M' ? 'Week' : ''}
+                          ${moment(metric.value).format(formats[metric.valueType])}`
+                        }
+                      </strong>
+                      was {metricSettings[metric.metric].label} by <strong>10%</strong><br />
+                      <small>Completely underwhelm high-quality methods of empowerment via.</small>
                     </span>
                   </List.Item>
                 )
