@@ -80,17 +80,17 @@ export const dataSample = [
   //   }
   // },
   {
-    metric:"mostProfitableMonthForLastYear",
-    value:"20180401",
-    valueType:"MONTH",
+    metric:"mostProfitableWeekForLastMonth",
+    value:"20190107",
+    valueType:"WEEK_M",
     metadata:{
       refreshFrequency:"WEEKLY"
     }
   },
   {
-    metric:"mostProfitableWeekForLastMonth",
-    value:"20190107",
-    valueType:"WEEK_M",
+    metric:"mostProfitableMonthForLastYear",
+    value:"20180401",
+    valueType:"MONTH",
     metadata:{
       refreshFrequency:"WEEKLY"
     }
@@ -116,36 +116,43 @@ export const metricSettings = {
     label: "Profitable campaigns",
     green: 90,
     red: 70,
+    order: 1,
   },
   campaignsWithOrders: {
     label: "Campaigns with orders",
     green: 70,
-    red: 30
+    red: 30,
+    order: 2,
   },
   campaignsHitting90PCBudget: {
     label: "Campaigns hitting 90% of budget",
     green: 60,
-    red: 80
+    red: 80,
+    order: 4,
   },
   campaignsHittingBudget: {
     label: "Campaigns hitting budget",
     green: 60,
-    red: 80
+    red: 80,
+    order: 3,
   },
   productsWithBidIncrease: {
     label: "Products with bid increase",
     green: 90,
-    red: 70
+    red: 70,
+    order: 5,
   },
   productsWithOrders: {
     label: "Products with orders",
     green: 75,
-    red: 30
+    red: 30,
+    order: 6,
   },
   profitableProducts: {
     label: "Profitable products",
     green: 70,
-    red: 50
+    red: 50,
+    order: 7,
   },
   mostProfitableDayForLastWeek: {
     label: "your most profitable day of the last week",
@@ -168,6 +175,7 @@ export const metricSettings = {
   percentOfAutomatedAdSpend: {
     label: "% of automated ad spend",
     green: 40,
-    red: 10
+    red: 10,
+    order: 8,
   },
 }

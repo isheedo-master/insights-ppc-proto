@@ -30,7 +30,9 @@ export default({metric, value}) => {
         </strong>
       </p>
       {metricSettings[metric].label}<br />
-      <small>Efficiently predominate technically </small>
+      <small>
+        Percentage of campaigns that are X compared to total campaigns
+      </small>
     </Card>
   );
 };

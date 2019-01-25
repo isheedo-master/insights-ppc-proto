@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 
 import { Col, Row, Layout, List, Icon, Divider } from 'antd';
 import moment from 'moment';
+import { sortBy } from 'lodash';
 
 import { MetricCard } from '../../views/MetricItem';
 import { dataSample } from '../../../utils/mocks/metrics';
@@ -24,7 +25,7 @@ const formats = {
 class App extends Component {
   render() {
     const percentageMetrics = dataSample.filter(metric => metric.valueType === 'PC')
-      .sort(metric => metric.metric.includes('campaigns') ? -1 : 1);
+      .sort(metric => metricSettings[metric.metric].order);
     const seasonalMetrics = dataSample.filter(metric => metric.valueType !== 'PC');
 
     return (
@@ -69,7 +70,15 @@ class App extends Component {
                         }
                       </strong>
                       was {metricSettings[metric.metric].label} by <strong>10%</strong><br />
-                      <small>Completely underwhelm high-quality methods of empowerment via.</small>
+                      <small>
+                      Usually
+                      <strong>
+                      {`${metric.valueType === 'WEEK_M' ? 'Week' : ''}
+                          ${moment(metric.value).format(formats[metric.valueType])}`
+                        }
+                      </strong>
+                       is when you tend to be most profitable by a factor of <strong>10%</strong>
+                      </small>
                     </span>
                   </List.Item>
                 )
