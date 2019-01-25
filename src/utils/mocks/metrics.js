@@ -140,7 +140,7 @@ export const metricSettings = {
     label: "Products with bid increase",
     green: 90,
     red: 70,
-    order: 5,
+    order: 7,
   },
   productsWithOrders: {
     label: "Products with orders",
@@ -152,7 +152,7 @@ export const metricSettings = {
     label: "Profitable products",
     green: 70,
     red: 50,
-    order: 7,
+    order: 5,
   },
   mostProfitableDayForLastWeek: {
     label: "your most profitable day of the last week",

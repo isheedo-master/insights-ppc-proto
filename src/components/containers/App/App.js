@@ -24,8 +24,9 @@ const formats = {
 
 class App extends Component {
   render() {
-    const percentageMetrics = dataSample.filter(metric => metric.valueType === 'PC')
-      .sort(metric => metricSettings[metric.metric].order);
+    const percentageMetrics = dataSample.filter(metric => metric.valueType === 'PC');
+    const percentageMetricsSorted = sortBy(percentageMetrics, metric => metricSettings[metric.metric].order)
+      // .sort(metric => metricSettings[metric.metric].order);
     const seasonalMetrics = dataSample.filter(metric => metric.valueType !== 'PC');
 
     return (
@@ -43,7 +44,7 @@ class App extends Component {
               <Icon type="bulb" /> INSIGHTS <small>for last 30 days</small>
             </Divider>
             <Row gutter={16} type="flex">
-              {percentageMetrics
+              {percentageMetricsSorted
                 .map( metric =>
                   <Col key={metric.metric} sm={12} md={6  }>
                     <MetricCard {...metric} />
