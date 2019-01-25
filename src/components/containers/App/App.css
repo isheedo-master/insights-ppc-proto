@@ -16,6 +16,10 @@
   background-color: white;
 }
 
+.ant-layout-header {
+  font-size: 12px;
+}
+
 .ant-list {
   width: 100%;
 }
